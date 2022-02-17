@@ -1,0 +1,143 @@
+/* Lato - Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+body {
+	margin-top: 11.36vh;
+	margin-right: 9.81vh;
+	margin-left: 9.81vh;
+	font-family: "Lato", sans-serif;
+}
+
+.header {
+	font-size: 	2.58vh;
+	color: rgb(56, 53, 53);
+}
+
+.name {
+	font-size: 8.26vh;
+	font-weight: 900;
+	margin-bottom: 4%;
+}
+
+.icon-small {
+	font-size: 2.58vh;
+	margin-bottom: 2%;
+}
+
+.icon-medium {
+	font-size: 3.09vh;
+	margin-bottom: 2%;
+}
+
+.icon-large {
+	font-size: 4.13vh;
+	margin-bottom: 2%;
+}
+
+.icon-margin {
+	margin-left: 0vh;
+}
+
+.no-padding-left {
+	padding-left: 0%;
+}
+
+.padding-top-3 {
+	padding-top: 3%;
+}
+
+.purple {
+	color: #3e0097;
+}
+
+.grey {
+	color: rgb(119, 118, 118);
+}
+
+.content {
+	margin-top: 1%;
+}
+
+.flex {
+	display: flex;
+}
+
+.content-2 {
+	font-size: 28px;
+}
+
+.content-3 {
+	font-size: 3.305vh;
+	margin-top: 3.92vh;
+}
+
+.content-4 {
+	font-size: 3.305vh;
+	line-height: 1.1em;
+}
+
+.content-5 {
+	margin-top: 1.54vh;
+	font-size: 3.09vh;
+	line-height: 1.2em;
+}
+
+
+
+.box {
+	border: 1px solid rgb(119, 118, 118);
+	border-radius: 1.44vh;
+	padding: 8px;
+	padding-left: 1.34vh;
+	padding-right: 1.34vh;
+	margin-bottom: 0.41vh;	
+	margin-top: 0.41vh;
+	width: fit-content;
+}
+
+.no-flex {
+	display: block;
+}
+
+.heading {
+	font-weight: 700;
+	font-size: 5.78vh;
+	margin-bottom: 0;
+}
+
+.hr-purple {
+	margin-top: 2px;
+	margin-bottom: 3.71vh;
+	border: 0.409vh solid #3e0097;
+	background-color: #3e0097;
+	opacity: 1;
+}
+
+.hr-grey {
+	margin-top: 4.64vh;
+	margin-bottom: 6.19vh;
+	border: 0.306vh dashed rgb(194, 194, 194);
+	background-color: white;
+	opacity: 1;
+}
+
+.hr-grey-no-margin {
+	border: 0.206vh dashed rgb(194, 194, 194);
+	background-color: white;
+	opacity: 1;
+}
+
+.sub-heading-1 {
+	font-size: 3.92vh;
+	margin-bottom: 0%;
+}
+
+.sub-heading-2 {
+	font-size: 3.09vh;
+	margin-bottom: 1%;
+}
+
+.sub-heading-3 {
+	font-size: 3.4vh;
+	margin-bottom: 1%;
+}
