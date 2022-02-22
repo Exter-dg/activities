@@ -13,13 +13,32 @@
 	<!--Font Awesome's icons-->
 	<script src="https://kit.fontawesome.com/e185cd8e68.js" crossorigin="anonymous"></script>
 
+	<!-- Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- JSPDF -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+	<!-- HTML2Canvas -->
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.js">
+	</script>
+	<script scr="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+
+
 	<title>Searce - Invoice</title>
 </head>
 
 <body>
+	<div class="container my-5">
+		<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			<button class="btn btn-danger me-md-2 " type="button" onclick="generatePDF()">Generate PDF</button>
+		</div>
+	</div>
+
 	<div class="container border border-2 my-5">
 		<form>
-			<div class="container">
+			<div class="container" id="printPDF">
 				<div class="row">
 					<div class="col-7">
 						<div class="d-flex flex-row mb-5 mt-4">
