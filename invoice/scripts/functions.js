@@ -196,3 +196,13 @@ function calculateAmtQt(id) {
     id = id.substr(6);
     calculateAmt(id);
 }
+
+function generatePDF() {
+    html2canvas(document.getElementById("printPDF")).then(function (canvas) {
+        var imgdata = canvas.toDataURL('image/png', 1.0)
+        var doc = new jsPDF("1", "mm", "a4")
+        // imagedata, format, x, y, width, height
+        doc.addImage(imgdata, 'PNG', 10, 10, 190, 230)
+        doc.save("sample.pdf")
+    })
+}
