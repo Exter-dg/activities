@@ -179,33 +179,33 @@ function updateCurrency() {
     for (let i = 1; i < counter; i++) {
         try {
             document.getElementById("currencyAmt" + i).innerHTML = currency;
-            document.getElementById("ItemAmt"+i).value = parseFloat(document.getElementById("ItemAmt"+i).value) * currencyExchangeRate;
-            document.getElementById("ItemRate"+i).value = parseFloat(document.getElementById("ItemRate"+i).value) * currencyExchangeRate;
+            document.getElementById("ItemAmt"+i).value = (parseFloat(document.getElementById("ItemAmt"+i).value) * currencyExchangeRate).toFixed(2);
+            document.getElementById("ItemRate"+i).value = (parseFloat(document.getElementById("ItemRate"+i).value) * currencyExchangeRate).toFixed(2);
         } catch (err) {
             // element with id may have been deleted
             console.log(err.message);
         }
     }
-    document.getElementById("subTotal").innerHTML = parseFloat(document.getElementById("subTotal").innerHTML) * currencyExchangeRate;
-    document.getElementById("vat").innerHTML = parseFloat(document.getElementById("vat").innerHTML) * currencyExchangeRate;
+    document.getElementById("subTotal").innerHTML = (parseFloat(document.getElementById("subTotal").innerHTML) * currencyExchangeRate).toFixed(2);
+    document.getElementById("vat").innerHTML = (parseFloat(document.getElementById("vat").innerHTML) * currencyExchangeRate).toFixed(2);
     document.getElementById("totalInput").innerHTML = "Total (" + currency + ")";
-    document.getElementById("totalOutput").innerHTML = parseFloat(document.getElementById("totalOutput").innerHTML) * currencyExchangeRate;
+    document.getElementById("totalOutput").innerHTML = (parseFloat(document.getElementById("totalOutput").innerHTML) * currencyExchangeRate).toFixed(2);
     document.getElementById("currencyTotal").innerHTML = currency;
-    document.getElementById("totalDue").value = (parseFloat(document.getElementById("totalDue").value) * currencyExchangeRate);
+    document.getElementById("totalDue").value = (parseFloat(document.getElementById("totalDue").value) * currencyExchangeRate).toFixed(2);
 
 }
 
 function calculateTotal() {
     let subTotal = parseFloat(document.getElementById("subTotal").innerHTML);
     let vat = parseFloat(document.getElementById("vat").innerHTML);
-    document.getElementById("totalOutput").innerHTML = vat + subTotal;
-    document.getElementById("totalDue").value = vat + subTotal;
+    document.getElementById("totalOutput").innerHTML = (vat + subTotal).toFixed(2);
+    document.getElementById("totalDue").value = (vat + subTotal).toFixed(2);
 }
 
 function calculateVAT() {
     let subTotal = parseFloat(document.getElementById("subTotal").innerHTML);
     let tax = parseFloat(document.getElementById("VATInput").value);
-    document.getElementById("vat").innerHTML = subTotal * (tax / 100);
+    document.getElementById("vat").innerHTML = (subTotal * (tax / 100)).toFixed(2);
     calculateTotal();
 }
 
@@ -220,7 +220,7 @@ function calculateSubTotal() {
             console.log(err.message);
         }
     }
-    document.getElementById("subTotal").innerHTML = sum;
+    document.getElementById("subTotal").innerHTML = sum.toFixed(2);
     calculateVAT();
 }
 
@@ -228,7 +228,7 @@ function calculateAmt(id) {
     var amt = document.getElementById("ItemAmt" + id);
     var rate = document.getElementById("ItemRate" + id);
     var qt = document.getElementById("ItemQt" + id);
-    amt.value = rate.value * qt.value;
+    amt.value = (rate.value * qt.value).toFixed(2);
     calculateSubTotal();
 }
 
