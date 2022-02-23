@@ -1,5 +1,23 @@
 var counter = 2; //Set counter
 
+const currencyExchangeRates = {
+    "USDGBP": 0.734488,
+    "USDINR": 74.6072,
+    "USDJPY": 115.116,
+
+    "GBPUSD": 1.36149,
+    "GBPINR": 101.592,
+    "GBPJPY": 156.729,
+
+    "INRGBP": 0.00984333,
+    "INRUSD": 0.0134019,
+    "INRJPY": 1.54274,
+
+    "JPYGBP": 0.00638043,
+    "JPYUSD": 0.00868693,
+    "JPYINR": 0.648198
+}
+
 function cloneItem(idToBeCloned) {
     buttonId = idToBeCloned;
 
@@ -152,16 +170,27 @@ function updateCurrency() {
     currency = document.getElementById("Currency").value;
     // extract currency's symbol - last three letters of string
     currency = currency.substr(-3);
+
+    oldCurrency = document.getElementById("currencyTotal").innerHTML;
+    currencyExchangeRate = currencyExchangeRates[oldCurrency+currency];
+
     for (let i = 1; i < counter; i++) {
         try {
             document.getElementById("currencyAmt" + i).innerHTML = currency;
+            document.getElementById("ItemAmt"+i).value = parseFloat(document.getElementById("ItemAmt"+i).value) * currencyExchangeRate;
+            document.getElementById("ItemRate"+i).value = parseFloat(document.getElementById("ItemRate"+i).value) * currencyExchangeRate;
         } catch (err) {
             // element with id may have been deleted
             console.log(err.message);
         }
     }
+    document.getElementById("subTotal").innerHTML = parseFloat(document.getElementById("subTotal").innerHTML) * currencyExchangeRate;
+    document.getElementById("vat").innerHTML = parseFloat(document.getElementById("vat").innerHTML) * currencyExchangeRate;
     document.getElementById("totalInput").innerHTML = "Total (" + currency + ")";
+    document.getElementById("totalOutput").innerHTML = parseFloat(document.getElementById("totalOutput").innerHTML) * currencyExchangeRate;
     document.getElementById("currencyTotal").innerHTML = currency;
+    document.getElementById("totalDue").value = (parseFloat(document.getElementById("totalDue").value) * currencyExchangeRate);
+
 }
 
 function calculateTotal() {
