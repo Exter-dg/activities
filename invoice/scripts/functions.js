@@ -164,6 +164,8 @@ function deleteItem(deleteButtonId) {
     itemId = "item"+id;
     var itemRow = document.getElementById(itemId);
     itemRow.remove(); 
+    // recalculate values
+    calculateSubTotal();
 }
 
 function updateCurrency() {
