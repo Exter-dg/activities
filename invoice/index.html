@@ -161,7 +161,7 @@
 				<div class="row my-2 mx-2" id="items">
 					<div class="row" id="item1">
 						<div class="col-7">
-							<div class="mb-1">
+							<div>
 								<textarea class="form-control" id="ItemName1" placeholder="Items you are selling"
 									rows="3"></textarea>
 							</div>
@@ -183,11 +183,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="d-grid gap-2 d-md-block my-0">
-							<button class="btn mb-4 px-3 py-2" style="background-color: rgb(231, 231, 231)"
+						<!-- Font size is 0 to eliminate the default space that browser puts between buttons -->
+						<div class="d-grid gap-2 d-md-block my-0" style="font-size: 0;">
+							<button class="btn mb-4 mx-0 px-3 py-2" style="background-color: rgb(229 231 235); border-radius: 0; border-color: rgb(209 213 219);"
 								type="button" id="cloneButton1" onclick="cloneItem(this.id)">
-								<i class="fa-regular fa-copy fa-lg"></i>
+								<i class="fa-regular fa-copy fa-lg" style="color:rgb(156 163 175);"></i>
 							</button>
+							<button class="btn mb-4 mx-0 px-3 py-2" style="background-color: rgb(229 231 235); border-radius: 0; border-color: rgb(209 213 219);"
+								type="button" id="deleteButton1" onclick="deleteItem(this.id)">
+								<i class="fa-solid fa-xmark fa-lg" style="color:rgb(156 163 175);"></i>
+							</button>
+							
 						</div>
 					</div>
 				</div>
