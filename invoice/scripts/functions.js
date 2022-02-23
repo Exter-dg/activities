@@ -38,9 +38,14 @@ function cloneItem(idToBeCloned) {
     const select5 = clone.querySelector("#" + CSS.escape(currencyAmtId));
     select5.id = "currencyAmt" + counter;
 
-    // set button's id
+    // set cloneButton's id
     const select6 = clone.querySelector("#" + CSS.escape(buttonId));
     select6.id = "cloneButton" + counter;
+
+    // set deleteButton's id
+    const deleteButtonId = "deleteButton" + buttonId.substr(11);
+    const select7 = clone.querySelector("#" + CSS.escape(deleteButtonId));
+    select7.id = "deleteButton" + counter;
 
     document.getElementById("items").appendChild(clone);
     counter++;
@@ -58,7 +63,7 @@ function newItem() {
         counter +
         '">' +
         '<div class="col-7">' +
-        '<div class="mb-1">' +
+        '<div>' +
         "<textarea" +
         ' class="form-control"' +
         ' id="ItemName' +
@@ -111,18 +116,22 @@ function newItem() {
         "</div>" +
         "</div>" +
         "</div>" +
-        '<div class="d-grid gap-2 d-md-block my-0">' +
+        '<div class="d-grid gap-2 d-md-block my-0" style="font-size: 0;">' +
         "<button" +
-        ' class="btn mb-4 px-3 py-2"' +
-        ' style="background-color: rgb(231, 231, 231)"' +
+        ' class="btn mb-4 mx-0 px-3 py-2"' +
+        ' style="background-color: rgb(229 231 235); border-radius: 0; border-color: rgb(209 213 219);"' +
         ' type="button"' +
         ' id="cloneButton' +
         counter +
         '"' +
         ' onclick="cloneItem(this.id)"' +
         ">" +
-        '<i class="fa-regular fa-copy fa-lg"></i>' +
+        '<i class="fa-regular fa-copy fa-lg" style="color:rgb(156 163 175);"></i>' +
         "</button>" +
+        '<button class="btn mb-4 mx-0 px-3 py-2" style="background-color: rgb(229 231 235); border-radius: 0; border-color: rgb(209 213 219);"'+
+		' type="button" id="deleteButton'+counter+'" onclick="deleteItem(this.id)">'+
+		'<i class="fa-solid fa-xmark fa-lg" style="color:rgb(156 163 175);"></i>'+
+		'</button>'+
         "</div>" +
         "</div>";
 
@@ -130,6 +139,13 @@ function newItem() {
     document.getElementById("items").appendChild(domNode.documentElement);
     // update counter
     counter++;
+}
+
+function deleteItem(deleteButtonId) {
+    id = deleteButtonId.substr(12);
+    itemId = "item"+id;
+    var itemRow = document.getElementById(itemId);
+    itemRow.remove(); 
 }
 
 function updateCurrency() {
