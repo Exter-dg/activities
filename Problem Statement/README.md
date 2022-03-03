@@ -12,5 +12,5 @@ For any i:
 Therefore ***water[i] = min(prefix[i], suffix[i]) - height[i];***
 
 <br>
-![Working](./res/ps1.png)
+![Water Trap Output](./res/ps1.png)
 
